@@ -1,80 +1,155 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #74ebd5, #acb6e5);
-    margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.header {
-    text-align: center;
-    padding: 20px;
-    color: white;
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7fd8d8, #91a7ff);
+}
+
+.app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 15px;
+}
+
+.weather-container {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .search-section {
-    text-align: center;
-    margin: 20px;
-    position: relative;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 .search-section input {
-    padding: 10px;
-    width: 220px;
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .search-section button {
-    padding: 10px;
-    margin-left: 5px;
-    cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #4f46e5;
+  color: white;
+  transition: 0.3s;
 }
 
-#suggestions {
-    position: absolute;
-    background: white;
-    width: 220px;
-    margin: auto;
-    left: 0;
-    right: 0;
-    border-radius: 5px;
-    z-index: 10;
+.search-section button:hover {
+  background: #4338ca;
 }
 
-#suggestions div {
-    padding: 8px;
-    cursor: pointer;
+.card {
+  background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-#suggestions div:hover {
-    background: #eee;
-}
-
-.weather-card {
-    background: white;
-    width: 90%;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
+.weather-card h2 {
+  margin-bottom: 10px;
 }
 
 .temperature {
-    font-size: 48px;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-.loading, .error {
-    text-align: center;
-    font-weight: bold;
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.forecast-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+}
+
+.forecast-day {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
 }
 
 .favorites {
+  margin-top: 20px;
     text-align: center;
+    font-weight: bold;
+
 }
 
+
 .favorites ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .favorites li {
+  background: #e0e7ff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 20px;
+}
+
+#favBtn{
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
     cursor: pointer;
-    padding: 5px;
+    transition: 0.3s;
+}
+#favBtn:hover{
+    background-color: #ff0044;
+}
+
+.description{
+    text-transform: capitalize;
+    padding: 10px;
+    font-size: 1.2rem;
+
 }

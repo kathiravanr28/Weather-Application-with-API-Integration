@@ -1,27 +1,27 @@
 import { CONFIG } from "./config.js";
 
-export default class WeatherService {
+class WeatherService {
+  constructor(apiKey) {
+    this.apiKey = CONFIG.API_KEY;
+    this.baseUrl = CONFIG.BASE_URL;
+    this.geoUrl = CONFIG.GEO_URL;
+  }
 
-    async getCurrentWeather(city, unit) {
-        const res = await fetch(
-            `${CONFIG.BASE_URL}/weather?q=${city}&units=${unit}&appid=${CONFIG.API_KEY}`
-        );
-        if (!res.ok) throw new Error("City not found");
-        return res.json();
-    }
+  async getCurrentWeather(city, unit = "metric") {
+    const res = await fetch(
+      `${this.baseUrl}/weather?q=${city}&units=${unit}&appid=${this.apiKey}`
+    );
+    if (!res.ok) throw new Error("City not found");
+    return res.json();
+  }
 
-    async getForecast(city, unit) {
-        const res = await fetch(
-            `${CONFIG.BASE_URL}/forecast?q=${city}&units=${unit}&appid=${CONFIG.API_KEY}`
-        );
-        if (!res.ok) throw new Error("Forecast error");
-        return res.json();
-    }
-
-    async getCitySuggestions(query) {
-        const res = await fetch(
-            `${CONFIG.GEO_URL}/direct?q=${query}&limit=5&appid=${CONFIG.API_KEY}`
-        );
-        return res.json();
-    }
+  async getForecast(city, unit = "metric") {
+    const res = await fetch(
+      `${this.baseUrl}/forecast?q=${city}&units=${unit}&appid=${this.apiKey}`
+    );
+    if (!res.ok) throw new Error("Forecast not found");
+    return res.json();
+  }
 }
+
+export default WeatherService;

@@ -1,67 +1,17 @@
-/* ===============================
-   RESPONSIVE DESIGN
-   =============================== */
-
-/* Tablets */
-@media (max-width: 900px) {
-
-    .search-section {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search-section input {
-        width: 90%;
-    }
-
-    .weather-card {
-        max-width: 90%;
-    }
-
-    .temperature {
-        font-size: 40px;
-    }
-}
-
-/* Mobile Devices */
 @media (max-width: 600px) {
+  .weather-container {
+    padding: 18px;
+  }
 
-    body {
-        background: linear-gradient(to bottom, #74ebd5, #acb6e5);
-    }
+  .app-header h1 {
+    font-size: 1.6rem;
+  }
 
-    .header h1 {
-        font-size: 22px;
-    }
+  .temperature {
+    font-size: 2.3rem;
+  }
 
-    .weather-main {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .temperature {
-        font-size: 34px;
-        margin: 10px 0;
-    }
-
-    .weather-details .detail {
-        font-size: 14px;
-    }
-
-    .favorites ul {
-        padding: 0;
-    }
-
-    .favorites li {
-        font-size: 14px;
-    }
-}
-
-/* Large Screens */
-@media (min-width: 1200px) {
-
-    .weather-card {
-        max-width: 450px;
-    }
+  .weather-details {
+    grid-template-columns: 1fr;
+  }
 }
