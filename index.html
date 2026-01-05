@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weather-icons.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>🌤️ Weather Application</h1>
+</header>
+
+<section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search city..." autocomplete="off">
+    <div id="suggestions"></div>
+    <button id="searchBtn">Search</button>
+    <button id="unitToggle">Switch to °F</button>
+</section>
+
+<section id="status"></section>
+
+<section id="currentWeather"></section>
+
+<section class="favorites">
+    <h3>⭐ Favorite Cities</h3>
+    <ul id="favoriteList"></ul>
+</section>
+
+<section id="forecast"></section>
+
+<footer class="footer">
+    <p>Powered by OpenWeatherMap API</p>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

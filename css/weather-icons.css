@@ -1,0 +1,38 @@
+/* ===============================
+   WEATHER ICONS
+   =============================== */
+
+.weather-icon {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+/* Clear Sky */
+.icon-clear::before {
+    content: "☀️";
+}
+
+/* Few / Scattered Clouds */
+.icon-clouds::before {
+    content: "☁️";
+}
+
+/* Rain */
+.icon-rain::before {
+    content: "🌧️";
+}
+
+/* Thunderstorm */
+.icon-thunder::before {
+    content: "⛈️";
+}
+
+/* Snow */
+.icon-snow::before {
+    content: "❄️";
+}
+
+/* Mist / Fog */
+.icon-mist::before {
+    content: "🌫️";
+}
